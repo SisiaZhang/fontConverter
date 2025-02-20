@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useUser } from '../../context/UserContext';
+import './Login.less'
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -16,21 +17,25 @@ const Login: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        placeholder="用户名"
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="密码"
-      />
-      <button type="submit">登录</button>
-    </form>
+    <div className="login-container">
+      <form onSubmit={handleSubmit} className="login-form">
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="用户名"
+          className="form-input"
+        />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="密码"
+          className="form-input"
+        />
+        <button type="submit" className="login-button">登录</button>
+      </form>
+    </div>
   );
 };
 

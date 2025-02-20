@@ -1,0 +1,113 @@
+@import '../../styles/variables.less';  // 假设您有一个全局变量文件
+
+.fontConverter {
+//   max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  height: 100%;
+  overflow: hidden;
+
+  .converterSection {
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+
+    .inputTextarea {
+      width: calc( 100% - 24px);
+      min-height: 120px;
+      padding: 12px;
+      border: 1px solid #d9d9d9;
+      border-radius: 4px;
+      resize: vertical;
+      font-size: 16px;
+
+      margin-bottom: 16px;
+
+      &:focus {
+        border-color: #40a9ff;
+        box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+        outline: none;
+      }
+    }
+
+    .controls {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+
+      button {
+        padding: 8px 16px;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.3s;
+
+        &.convertBtn {
+          background: #1890ff;
+          color: white;
+
+          &:hover {
+            background: #40a9ff;
+          }
+        }
+
+        &.resetBtn {
+          background: #f5f5f5;
+          color: #666;
+
+          &:hover {
+            background: #e8e8e8;
+          }
+        }
+      }
+    }
+
+    .sampleFonts {
+      overflow-y: auto;
+      height: calc(100% - 200px);
+    
+      .sampleFont {
+        padding: 16px;
+        border: 1px solid #f0f0f0;
+        border-radius: 4px;
+
+        .sampleFontName {
+          color: rgba(0, 0, 0, 0.45);
+          font-size: 14px;
+          margin-bottom: 8px;
+        }
+
+        .sampleFontTextContainer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+  
+          .sampleFontText {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        
+      }
+    }
+  }
+}
+
+// 响应式设计
+@media screen and (max-width: @screen-sm) {
+  .fontConverter {
+    padding: 10px;
+
+    .controls {
+      .fontSelect,
+      .convertBtn,
+      .copyBtn {
+        flex: 1 1 auto;
+      }
+    }
+  }
+} 

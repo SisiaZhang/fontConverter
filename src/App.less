@@ -1,36 +1,67 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .app-container {
-  min-height: 100vh;
-  background: #f5f7fa;
-  padding: 20px;
-  
-  .content-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  .header-container {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 0 24px;
+    box-shadow: 0 1px 4px rgba(0,21,41,.08);
+    border-bottom: 1px solid #f0f0f0;
+
+    .sun-icon {
+      font-size: 24px;
+      color: #1d65d8;
+      margin: 10px;
+    }
+
+    .header-title {
+      font-size: 20px;
+      color: #1d65d8;
+    }
+  }
+
+  .sider-container {
+    width: 15%;
+    background: #fff;
+    padding: 30px 0;
+
+    .menu-container {
+      height: 100%;
+      border-right: 1px solid #f0f0f0;
+
+      .ant-menu-item {
+        flex-direction: column;
+        height: 80px;
+        padding-left: unset !important;
+        margin: 10px 0;
+
+        .menu-icon {
+          font-size: 24px;
+          margin: 8px;
+        }
+      }
+    }
+  }
+
+  .content-container {
     padding: 24px;
+    min-height: calc(100vh - 64px - 70px);
+    height: calc(100vh - 64px - 70px);
+    background: #fff;
+    overflow-y: auto;
+  }
 
-    .login-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 400px;
-    }
-
-    .main-content {
-      .font-converter {
-        margin-bottom: 32px;
-        padding: 20px;
-        background: #fafafa;
-        border-radius: 6px;
-      }
-
-      .history-section {
-        padding: 20px;
-        background: #fafafa;
-        border-radius: 6px;
-      }
-    }
+  .footer-container {
+    text-align: center;
+    background: #fff;
+    height: 70px;
+    padding: 16px;
+    border-top: 1px solid #f0f0f0;
   }
 } 
