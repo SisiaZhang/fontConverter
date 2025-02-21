@@ -13,14 +13,14 @@ jobs:
             # 获取源码
             - name: 迁出代码
               # 使用action库  actions/checkout获取源码
-              uses: actions/checkout@master
+              uses: actions/checkout@main
 
             # 安装Node10
             - name: 安装node.js
               # 使用action库  actions/setup-node安装node
               uses: actions/setup-node@v1
               with:
-                  node-version: 14.0.0
+                  node-version: 20.13.1
 
             # 安装依赖
             - name: 安装依赖
@@ -45,4 +45,4 @@ jobs:
                   # 用户
                   REMOTE_USER: 'root'
                   # 目标地址
-                  TARGET: '/www/wwwroot'
+                  TARGET: '/var/fontconverter'
